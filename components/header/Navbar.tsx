@@ -10,29 +10,52 @@ import HeaderSearchMenu from "$store/islands/HeaderSearchMenu.tsx";
 import SearchInput from "./SearchInput.tsx";
 import ButtonLogin from "./ButtonLogin.tsx";
 
-function Navbar({ items, searchbar }: {
+const location = "São Paulo-SP";
+
+function Navbar({ items }: {
   items: INavItem[];
-  searchbar: SearchbarProps;
 }) {
   return (
     <>
       {/* Mobile Version */}
       <div
-        class={`md:hidden flex flex-row justify-between items-center h-[${navbarHeight}] border-b-1 border-default w-full px-2 gap-2`}
+        class={`md:hidden flex flex-col h-full border-b-1 border-default w-full px-2 gap-2 bg-[#040491]`}
       >
-        <HeaderButton variant="menu" />
-
-        <a
-          href="/"
-          class={`flex-grow inline-flex items-center min-h-[${navbarHeight}]`}
-          aria-label="Store logo"
-        >
-          <Icon id="Logo" width={126} height={16} />
-        </a>
-
-        <div class="flex gap-1">
-          <HeaderButton variant="search" />
+        <div class="flex flex-row items-center h-full justify-between w-full">
+          <div class="flex items-center ">
+            <HeaderButton variant="menu" />
+            <img
+              src="https://novomundo.vtexassets.com/arquivos/v2-logo-novo-mundo.png?v=20230314100853"
+              alt="Novo Mundo"
+              class="block w-[200px] mr-6 object-contain	"
+            />
+          </div>
           <HeaderButton variant="cart" />
+        </div>
+
+        <div class="flex">
+          <input
+            type="text"
+            placeholder="Procure por código, nome, marca..."
+            class="w-full h-[48px] rounded-l-full text-base focus:outline-none	focus:ring-0 focus:ring-transparent "
+          />
+          <button class="rounded-r-full bg-[#00CF80] text-[#fff] px-5 text-base	h-[48px] focus:outline-none	focus:ring-0 focus:ring-transparent">
+            <Icon
+              id="MagnifyingGlass"
+              width={24}
+              height={24}
+              strokeWidth={0.01}
+              class="text-[#fff]"
+            />
+          </button>
+        </div>
+        <div class="flex justify-center items-center text-xs pb-2">
+          <p class="text-[#fff]">
+            Ofertas para <span class="text-[#00CF80]">{location}</span>
+          </p>
+          <button class="bg-[#00CF80] text-[#040491] ml-1 rounded-full px-2 focus:outline-none focus:ring-0 focus:ring-transparent">
+            alterar
+          </button>
         </div>
       </div>
 
@@ -48,20 +71,7 @@ function Navbar({ items, searchbar }: {
             <SearchInput />
             <ButtonLogin />
             <div class="pl-8">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="#fff"
-                className="w-10 h-10"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                />
-              </svg>
+            <HeaderButton variant="cart" />
             </div>
           </div>
 
@@ -69,7 +79,6 @@ function Navbar({ items, searchbar }: {
             <div class="flex-auto flex justify-center">
               {items.map((item) => <NavItem item={item} />)}
             </div>
-           
           </div>
         </div>
       </div>

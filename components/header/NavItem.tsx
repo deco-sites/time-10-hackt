@@ -28,7 +28,7 @@ function NavItem({ item }: { item: INavItem }) {
         (
           <div
             class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-full mt-[${headerHeight}]`}
-            style={{ top: "70px", left: "0px" }}
+            style={{ top: "90px", left: "0px" }}
           >
            
             <ul class="flex items-start justify-center gap-6">

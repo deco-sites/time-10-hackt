@@ -67,7 +67,7 @@ function Header(
     <header class={`h-[${headerHeight}]`}>
       <div class="bg-default fixed w-full z-50">
         <TopHeader />
-        <Navbar items={navItems} searchbar={searchbar} />
+        <Navbar items={navItems} />
       </div>
 
       <Modals

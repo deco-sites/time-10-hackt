@@ -2,7 +2,7 @@ import { useUI } from "../../sdk/useUI.ts";
 import Button from "../ui/Button.tsx";
 import Icon from "../ui/Icon.tsx";
 
-function SearchButton() {
+export function SearchButton() {
   const { displaySearchbar } = useUI();
 
   return (
