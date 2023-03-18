@@ -83,7 +83,7 @@ function Menu({ items }: Props) {
         {items.map((item) => <MenuItem item={item} />)}
       </ul>
 
-      <ul class="flex flex-col py-2 bg-hover">
+      {/* <ul class="flex flex-col py-2 bg-hover">
         <li>
           <a
             class="flex items-center gap-4 px-4 py-2"
@@ -120,7 +120,7 @@ function Menu({ items }: Props) {
             <Text variant="caption">Minha conta</Text>
           </a>
         </li>
-      </ul>
+      </ul> */}
     </>
   );
 }

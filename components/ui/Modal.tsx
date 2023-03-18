@@ -15,7 +15,7 @@ if (IS_BROWSER && typeof window.HTMLDialogElement === "undefined") {
 }
 
 export type Props = JSX.IntrinsicElements["dialog"] & {
-  title?: string;
+  isCart?: boolean;
   mode?: "sidebar-right" | "sidebar-left" | "center";
   onClose?: () => Promise<void> | void;
   loading?: "lazy" | "eager";
@@ -27,9 +27,26 @@ const styles = {
   center: "",
 };
 
+const IconLogin = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1}
+    stroke="#fff"
+    className="w-10 h-10"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
+    />
+  </svg>
+);
+
 const Modal = ({
+  isCart,
   open,
-  title,
   mode = "sidebar-right",
   onClose,
   children,
@@ -66,14 +83,47 @@ const Modal = ({
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      <section class="pt-6 h-full bg-default flex flex-col">
-        <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
-          <h1>
-            <Text variant="heading-2">{title}</Text>
-          </h1>
-          <Button variant="icon" onClick={onClose}>
-            <Icon id="XMark" width={20} height={20} strokeWidth={2} />
-          </Button>
+      <section class="h-full bg-default flex flex-col">
+        <header class="flex flex-col bg-[#040491]">
+          <div class="flex p-3 justify-between">
+            <div class='flex'>
+            {isCart
+              ? (
+                <Button variant="icon" onClick={onClose}>
+                  <Icon
+                    class="text-white"
+                    size={30}
+                    id="ChevronRight"
+                    strokeWidth={1}
+                  />
+                </Button>
+              )
+              : (
+                <Button variant="icon">
+                  <IconLogin />
+                </Button>
+              )}
+
+            <div class="flex flex-col pl-2">
+              <Text class="text-white text-sm">
+                Seja Bem Vindo à Novo Mundo
+              </Text>
+              <Text class="text-white font-bold text-base">
+                Já é cadastrado?
+              </Text>
+            </div>
+            </div>
+            {!isCart && (
+            <Button variant="icon" onClick={onClose}>
+              <Icon
+                class="text-white"
+                size={30}
+                id="ChevronLeft"
+                strokeWidth={1}
+              />
+            </Button>
+          )}
+          </div>
         </header>
         <div class="overflow-y-auto h-full flex flex-col">
           {loading === "lazy" ? lazy.value && children : children}
