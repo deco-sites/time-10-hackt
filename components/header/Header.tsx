@@ -64,6 +64,8 @@ function Header(
   }: Props,
 ) {
   const searchbar = { ..._searchbar, products, suggestions, configVTEX };
+  console.log("alerts: ", alerts);
+
   return (
     <header class={`h-[${headerHeight}]`}>
       <div class="bg-default fixed w-full z-50">
