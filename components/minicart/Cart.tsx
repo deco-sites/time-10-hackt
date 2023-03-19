@@ -6,6 +6,7 @@ import Text from "$store/components/ui/Text.tsx";
 import { useUI } from "../../sdk/useUI.ts";
 import CartItem from "./CartItem.tsx";
 import Coupon from "./Coupon.tsx";
+import CartEmpty from "./CartEmpty.tsx";
 
 const CHECKOUT_URL =
   "https://bravtexfashionstore.vtexcommercestable.com.br/checkout";
@@ -27,19 +28,7 @@ function Cart() {
 
   // Empty State
   if (isCartEmpty) {
-    return (
-      <div class="flex flex-col justify-center items-center h-full gap-6">
-        <Text variant="heading-2">Sua sacola está vazia</Text>
-        <Button
-          variant="secondary"
-          onClick={() => {
-            displayCart.value = false;
-          }}
-        >
-          Escolher produtos
-        </Button>
-      </div>
-    );
+    return <CartEmpty onClick={() => displayCart.value = false} />;
   }
 
   return (

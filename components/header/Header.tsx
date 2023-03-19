@@ -5,7 +5,7 @@ import type { LoaderReturnType } from "$live/types.ts";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 
-import Alert from "./Alert.tsx";
+import TopHeader from "./TopHeader.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
 
@@ -54,8 +54,7 @@ export interface Props {
 }
 
 function Header(
-  {
-    alerts,
+  { 
     searchbar: _searchbar,
     products,
     navItems = [],
@@ -64,13 +63,11 @@ function Header(
   }: Props,
 ) {
   const searchbar = { ..._searchbar, products, suggestions, configVTEX };
-  console.log("alerts: ", alerts);
-
   return (
     <header class={`h-[${headerHeight}]`}>
       <div class="bg-default fixed w-full z-50">
-        <Alert alerts={alerts} />
-        <Navbar items={navItems} searchbar={searchbar} />
+        <TopHeader />
+        <Navbar items={navItems} />
       </div>
 
       <Modals

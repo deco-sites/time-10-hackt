@@ -16,8 +16,9 @@ function NavItem({ item }: { item: INavItem }) {
     <li class="group flex items-center">
       <a href={href} class="px-4 py-3">
         <Text
-          class="group-hover:border-black border-solid border-b border-white"
+         class="hover:text-[#00CF80]"
           variant="menu"
+          tone="default-inverse"
         >
           {label}
         </Text>
@@ -26,19 +27,10 @@ function NavItem({ item }: { item: INavItem }) {
       {children && children.length > 0 &&
         (
           <div
-            class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-screen mt-[${headerHeight}]`}
-            style={{ top: "0px", left: "0px" }}
+            class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-full mt-[${headerHeight}]`}
+            style={{ top: "90px", left: "0px" }}
           >
-            {image?.src && (
-              <Image
-                class="p-6"
-                src={image.src}
-                alt={image.alt}
-                width={300}
-                height={332}
-                loading="lazy"
-              />
-            )}
+           
             <ul class="flex items-start justify-center gap-6">
               {children.map((node) => (
                 <li class="p-6">
@@ -57,7 +49,20 @@ function NavItem({ item }: { item: INavItem }) {
                   </ul>
                 </li>
               ))}
-            </ul>
+          </ul>
+
+          {image?.src && (
+              <Image
+                class="p-6"
+                src={image.src}
+                alt={image.alt}
+                width={300}
+                height={332}
+                loading="lazy"
+              />
+            )}
+          
+
           </div>
         )}
     </li>

@@ -20,22 +20,21 @@ function Modals({ menu, searchbar }: Props) {
 
   return (
     <>
-      <Modal
-        title="Menu"
+      <Modal 
+        isCart={false}
         mode="sidebar-left"
         loading="lazy"
         open={displayMenu.value}
         onClose={() => {
           displayMenu.value = false;
-        }}
+        }} 
       >
         <Suspense fallback={<Loading />}>
           <Menu {...menu} />
         </Suspense>
       </Modal>
 
-      <Modal
-        title="Buscar"
+   {/*    <Modal
         mode="sidebar-right"
         loading="lazy"
         open={displaySearchbar.value &&
@@ -48,9 +47,9 @@ function Modals({ menu, searchbar }: Props) {
           <Searchbar {...searchbar} />
         </Suspense>
       </Modal>
-
+ */}
       <Modal
-        title="Minha sacola"
+        isCart
         mode="sidebar-right"
         loading="lazy"
         open={displayCart.value}
