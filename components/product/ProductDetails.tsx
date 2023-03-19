@@ -52,7 +52,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
         itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
       />
       <h1>
-        <Text class="text-[32px] mt-[20px] flex font-bold">{name}</Text>
+        <Text class="lg:text-[32px] mt-[20px] flex font-bold max-md:text-[25px]">{name}</Text>
       </h1>
       {/* Code and name */}
       <div class="mt-4">
@@ -64,7 +64,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
       </div>
       <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
         {/* Image Gallery */}
-        <div class="flex flex-row overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2 w-[48.7%]">
+        <div class="flex flex-row lg:overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2 w-[48.7%] max-md:w-full max-md:overflow-visible">
           {[front].map((img, index) => (
             <Image
               // style={{ aspectRatio: "360 / 500" }}

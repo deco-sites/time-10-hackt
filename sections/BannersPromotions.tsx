@@ -29,7 +29,7 @@ export interface Props {
   banners: Banner[];
 }
 
-export default function BannnerGrid({
+export default function BannnerPromotions({
   itemsPerLine,
   borderRadius,
   banners = [],
@@ -38,7 +38,7 @@ export default function BannnerGrid({
     <section class="w-full px-4 md:px-[7px] mx-auto mt-[15px] mb-[15px] justify-around flex">
     <div
         class={`grid gap-4 md:gap-6 grid-cols-${
-        itemsPerLine && itemsPerLine.mobile ? itemsPerLine.mobile : "2"
+        itemsPerLine && itemsPerLine.mobile ? itemsPerLine.mobile : "1"
         } md:grid-cols-${
         itemsPerLine && itemsPerLine.desktop
             ? itemsPerLine.desktop
@@ -58,12 +58,6 @@ export default function BannnerGrid({
         >
             <Picture>
             <Source
-                media="(max-width: 767px)"
-                src={srcMobile}
-                width={100}
-                height={100}
-            />
-            <Source
                 media="(min-width: 768px)"
                 src={srcDesktop ? srcDesktop : srcMobile}
                 // width={250}
@@ -72,7 +66,7 @@ export default function BannnerGrid({
             <img
                 class="w-full h-auto"
                 sizes="(max-width: 640px) 100vw, 30vw"
-                src={srcMobile}
+                src={srcDesktop}
                 alt={alt}
                 decoding="async"
                 loading="lazy"

@@ -14,7 +14,7 @@ function NavItem({ item }: { item: INavItem }) {
 
   return (
     <li class="group flex items-center">
-      <a href={href} class="px-4 py-3">
+      <a href={href} class="px-4 py-3 text-center">
         <Text
          class="hover:text-[#00CF80]"
           variant="menu"
@@ -28,7 +28,7 @@ function NavItem({ item }: { item: INavItem }) {
         (
           <div
             class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-full mt-[${headerHeight}]`}
-            style={{ top: "90px", left: "0px" }}
+            style={{ top: "100px", left: "0px" }}
           >
            
             <ul class="flex items-start justify-center gap-6">

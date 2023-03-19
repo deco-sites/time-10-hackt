@@ -26,6 +26,7 @@ function GlobalTags() {
       <link rel="manifest" href={asset("/site.webmanifest")} />
       <meta name="theme-color" content="#221E1F" />
       <meta name="msapplication-TileColor" content="#221E1F" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       {
         /*

@@ -10,7 +10,7 @@ function ButtonLogin() {
         variant="icon"
         href="/login"
         aria-label="Log in"
-        class=""
+        class="border-[0px]"
       >
         <div class=" border-2 border-[#00CF80] rounded-full p-4 ">
           <svg
