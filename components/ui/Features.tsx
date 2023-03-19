@@ -29,11 +29,11 @@ function FeatureHighlights(
       <div class="border-default border-1">
         <div class="flex flex-col justify-evenly sm:flex-row divide-y-1 sm:divide-y-0 sm:divide-x-1 divide-default mx-6 sm:mx-0 sm:my-10">
           {features.map(({ icon: id = "Truck", title, description }) => (
-            <div class="flex flex-row sm:flex-col gap-4 py-6 sm:py-0 sm:px-10">
+            <div class="flex flex-row gap-4 py-6 sm:py-0 sm:px-10">
               <Icon
                 id={id}
-                width={40}
-                height={40}
+                width={35}
+                height={35}
                 strokeWidth={2}
               />
               <div class="flex flex-col gap-2">

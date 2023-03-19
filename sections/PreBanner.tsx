@@ -1,4 +1,3 @@
-import Container from "$store/components/ui/Container.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
@@ -35,24 +34,12 @@ export interface Props {
 }
 
 export default function BannnerGrid({
-  title,
   itemsPerLine,
-  borderRadius,
   banners = [],
 }: Props) {
   return (
-    <Container>
-      <section class="w-full px-4 md:px-0 mx-auto min-h-100px">
-        {title &&
-          (
-            <div class="py-6 md:py-0 md:pb-[40px] flex items-center mt-6" style="display: none">
-              <h2 class={"text-lg leading-5 font-semibold uppercase "}>
-                {title}
-              </h2>
-
-              <div class="bg-[#e5e5ea] h-[1px] w-full ml-4"></div>
-            </div>
-          )}
+   
+      <section class="w-full px-4 md:px-0 mx-auto mb-1">
         <div
           class={`grid gap-4 md:gap-6 grid-cols-${
             itemsPerLine && itemsPerLine.mobile ? itemsPerLine.mobile : "2"
@@ -62,35 +49,21 @@ export default function BannnerGrid({
               : banners.length
           }`}
         >
-          {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
+          {banners.map(({ href, srcDesktop }) => (
             <a
               href={href}
-              class={`overflow-hidden ${
-                borderRadius?.mobile && `rounded-[${borderRadius.mobile}px]`
-              } ${
-                borderRadius?.desktop
-                  ? `sm:rounded-[${borderRadius.desktop}px]`
-                  : `sm:rounded-none`
-              }`}
+              class={`overflow-hidden`}
             >
               <Picture>
                 <Source
-                  media="(max-width: 767px)"
-                  src={srcMobile}
-                  width={100}
-                  height={100}
-                />
-                <Source
-                  media="(min-width: 768px)"
-                  src={srcDesktop ? srcDesktop : srcMobile}
-                  width={250}
-                  height={250}
+                    class="w-full"
+                    media="(min-width: 768px) (max-width: 100%)"
+                    src={srcDesktop ? srcDesktop : ''}
                 />
                 <img
                   class="w-full h-auto"
                   sizes="(max-width: 640px) 100vw, 30vw"
-                  src={srcMobile}
-                  alt={alt}
+                  src={srcDesktop}
                   decoding="async"
                   loading="lazy"
                 />
@@ -99,6 +72,5 @@ export default function BannnerGrid({
           ))}
         </div>
       </section>
-    </Container>
   );
 }

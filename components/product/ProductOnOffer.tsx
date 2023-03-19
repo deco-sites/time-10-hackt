@@ -1,7 +1,8 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Avatar from "$store/components/ui/Avatar.tsx";
-import Button from "$store/components/ui/Button.tsx";
+// import Button from "$store/components/ui/Button.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
@@ -40,7 +41,7 @@ interface Props {
   preload?: boolean;
 }
 
-function ProductCard({ product, preload }: Props) {
+function ProductOnOffer({ product, preload }: Props) {
   const {
     url,
     productID,
@@ -90,24 +91,35 @@ function ProductCard({ product, preload }: Props) {
           )}
         </div>
 
-        <div class="flex flex-col gap-1 py-2 h-[200px] text-center py-[10px]">
+        <div class="flex items-center bg-[#00CF80] w-full h-[45px] text-center justify-center">
+            <Icon
+                class="text-white fill-white color-[#ffffff] mr-[5px] font-bold w-[25px] h-[25px]"
+                color="#ffffff"
+                size={20}
+                id="Timer"
+                strokeWidth={3}
+            />
+            <p class="text-[#ffffff] uppercase font-bold">Aproveite Já!</p>
+        </div>
+
+        <div class="flex flex-col gap-1 py-2 bg-[#040491] h-[200px] text-center py-[10px]">
           <Text
-            class="font-bold w-[95%] my-0 mx-auto text-[15.2px]"
+            class="text-[#ffffff] font-bold w-[95%] my-0 mx-auto text-[15.2px]"
             variant="caption"
           >
             {name}
           </Text>
           <div class="flex items-center gap-2 flex-col">
             <Text
-              class="font-[15.2px] flex font-sans text-[#808080] mt-[5px]"
+              class="font-[15.2px] flex font-sans text-white"
             >
                 de: <p class="line-through">{formatPrice(listPrice, offers!.priceCurrency!)}</p>
             </Text>
-            <Text class="flex  items-center">
+            <Text class="flex text-white items-center">
                 por <p class="font-black text-[20px] mx-[5px]">{formatPrice(price, offers!.priceCurrency!)}</p> à vista
             </Text>
             <Text
-                class=""
+                class="text-white"
             >
                 {(installments)}
             </Text>
@@ -118,4 +130,4 @@ function ProductCard({ product, preload }: Props) {
   );
 }
 
-export default ProductCard;
+export default ProductOnOffer;
