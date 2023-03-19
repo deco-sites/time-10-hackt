@@ -3,6 +3,10 @@ import Text from "$store/components/ui/Text.tsx";
 import Container from "$store/components/ui/Container.tsx";
 
 import Newsletter from "./Newsletter.tsx";
+import FooterComponent from "./FooterComponent.tsx";
+import FooterComponent2 from "./FooterComponent2.tsx";
+
+
 import type { ComponentChildren } from "preact";
 
 export type IconItem = { icon: AvailableIcons };
@@ -51,7 +55,7 @@ function FooterContainer(
     children: ComponentChildren;
   },
 ) {
-  return <div class={`py-6 px-4 sm:py-12 sm:px-0 ${_class}`}>{children}</div>;
+  return <div class={`py-6 px-4 sm:px-0 ${_class}`}>{children}</div>;
 }
 
 export interface Props {
@@ -60,9 +64,9 @@ export interface Props {
 
 function Footer({ sections = [] }: Props) {
   return (
-    <footer class="w-full bg-footer flex flex-col divide-y-1 divide-default">
-      <div>
-        <Container class="w-full flex flex-col divide-y-1 divide-default">
+    <footer class="w-full bg-footer flex flex-col">
+      <div class="bg-[#00CF80]">
+        <Container class="w-full flex justify-center">
           <FooterContainer>
             <Newsletter />
           </FooterContainer>
@@ -78,9 +82,8 @@ function Footer({ sections = [] }: Props) {
                     </Text>
 
                     <ul
-                      class={`flex ${
-                        isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                      } gap-2 pt-2`}
+                      class={`flex ${isIcon(section.children[0]) ? "flex-row" : "flex-col"
+                        } gap-2 pt-2`}
                     >
                       {section.children.map((item) => (
                         <li>
@@ -104,9 +107,8 @@ function Footer({ sections = [] }: Props) {
                       </summary>
 
                       <ul
-                        class={`flex ${
-                          isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                        } gap-2 px-2 pt-2`}
+                        class={`flex ${isIcon(section.children[0]) ? "flex-row" : "flex-col"
+                          } gap-2 px-2 pt-2`}
                       >
                         {section.children.map((item) => (
                           <li>
@@ -123,57 +125,17 @@ function Footer({ sections = [] }: Props) {
         </Container>
       </div>
 
-      <div>
+      <div class="bg-[#040491]">
         <Container class="w-full">
-          <FooterContainer class="flex justify-between w-full">
-            <Text
-              class="flex items-center gap-1"
-              variant="body"
-              tone="default-inverse"
-            >
-              Powered by{" "}
-              <a
-                href="https://www.deco.cx"
-                aria-label="powered by https://www.deco.cx"
-              >
-                <Icon id="Deco" height={20} width={60} strokeWidth={0.01} />
-              </a>
-            </Text>
-
-            <ul class="flex items-center justify-center gap-2">
-              <li>
-                <a
-                  href="https://www.instagram.com/deco.cx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram logo"
-                >
-                  <Icon
-                    class="text-default-inverse"
-                    width={32}
-                    height={32}
-                    id="Instagram"
-                    strokeWidth={1}
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://www.deco.cx/discord"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Discord logo"
-                >
-                  <Icon
-                    class="text-default-inverse"
-                    width={32}
-                    height={32}
-                    id="Discord"
-                    strokeWidth={5}
-                  />
-                </a>
-              </li>
-            </ul>
+          <FooterContainer>
+            <FooterComponent />
+          </FooterContainer>
+        </Container>
+      </div>
+      <div class="bg-white">
+        <Container class="w-full">
+          <FooterContainer>
+            <FooterComponent2 />
           </FooterContainer>
         </Container>
       </div>
