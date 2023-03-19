@@ -77,7 +77,9 @@ function Navbar({ items }: {
 
           <div class="flex">
             <div class="flex-auto flex justify-center">
-              {items.map((item) => <NavItem item={item} />)}
+              <ul class="flex-auto flex justify-center">
+                {items.map((item) => <NavItem item={item} />)}
+              </ul>
             </div>
           </div>
         </div>

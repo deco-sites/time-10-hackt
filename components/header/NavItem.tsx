@@ -55,7 +55,7 @@ function NavItem({ item }: { item: INavItem }) {
               <Image
                 class="p-6"
                 src={image.src}
-                alt={image.alt}
+                alt="Images"
                 width={300}
                 height={332}
                 loading="lazy"

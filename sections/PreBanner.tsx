@@ -66,6 +66,7 @@ export default function BannnerGrid({
                   src={srcDesktop}
                   decoding="async"
                   loading="lazy"
+                  alt="PreBanner"
                 />
               </Picture>
             </a>
