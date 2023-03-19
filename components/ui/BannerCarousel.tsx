@@ -1,4 +1,4 @@
-import Text from "$store/components/ui/Text.tsx";
+// import Text from "$store/components/ui/Text.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
@@ -49,9 +49,9 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   } = image;
 
   return (
-    <div class="relative h-[600px] min-w-[100vw] overflow-y-hidden">
+    <div class="relative w-full h-auto overflow-y-hidden">
       <a href={action?.href ?? "#"} aria-label={action?.label}>
-        <Picture class="w-full" preload={lcp}>
+        <Picture class="w-full flex" preload={lcp}>
           <Source
             media="(max-width: 767px)"
             fetchPriority={lcp ? "high" : "auto"}
@@ -63,30 +63,14 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             media="(min-width: 768px)"
             fetchPriority={lcp ? "high" : "auto"}
             src={desktop}
-            width={1440}
-            height={600}
           />
           <img
-            class="object-cover w-full sm:h-full"
+            class="w-full h-auto"
             loading={lcp ? "eager" : "lazy"}
             src={desktop}
             alt={alt}
           />
         </Picture>
-        {action && (
-          <div
-            class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 bg-hover-inverse p-4 rounded"
-            style={{ backdropFilter: "blur(8px)" }}
-          >
-            <Text variant="heading-1" tone="default-inverse">
-              {action.title}
-            </Text>
-            <Text variant="heading-3" tone="default-inverse">
-              {action.subTitle}
-            </Text>
-            <Button variant="secondary">{action.label}</Button>
-          </div>
-        )}
       </a>
     </div>
   );

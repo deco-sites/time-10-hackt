@@ -42,6 +42,7 @@ const options: Omit<Options, "selfURL"> = {
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",
         "hover-inverse": "rgba(255, 255, 255, 0.4)",
+        "offer-bg": "rgb(0, 207, 128)"
       },
       textColor: {
         "default": "#161616",
@@ -52,6 +53,10 @@ const options: Omit<Options, "selfURL"> = {
         "section-title": "#161616",
         "positive": "#1A7346",
         "critical": "#B44125",
+        "white": "#FFFFFF"
+      },
+      aspectRatio: {
+        '2560/400': '2560 / 400',
       },
       borderColor: {
         "default": "#D4DBD7",
@@ -111,7 +116,7 @@ const options: Omit<Options, "selfURL"> = {
       },
     },
     fontFamily: {
-      sans: ["Albert Sans", "sans-serif"],
+      sans: ["Lato", "arial,helvetica,sans-serif"],
       serif: ["inherit", "serif"],
     },
     screens: {
