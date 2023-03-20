@@ -28,6 +28,8 @@ function Navbar({ items }: {
               src="https://novomundo.vtexassets.com/arquivos/v2-logo-novo-mundo.png?v=20230314100853"
               alt="Novo Mundo"
               class="block w-[200px] mr-6 object-contain	"
+              width={300}
+              height={66}
             />
           </div>
           <HeaderButton variant="cart" />
@@ -39,7 +41,7 @@ function Navbar({ items }: {
             placeholder="Procure por código, nome, marca..."
             class="w-full h-[48px] rounded-l-full text-base focus:outline-none	focus:ring-0 focus:ring-transparent "
           />
-          <button class="rounded-r-full bg-[#00CF80] text-[#fff] px-5 text-base	h-[48px] focus:outline-none	focus:ring-0 focus:ring-transparent">
+          <button class="rounded-r-full bg-[#00CF80] text-[#fff] px-5 text-base	h-[48px] focus:outline-none	focus:ring-0 focus:ring-transparent" name="button">
             <Icon
               id="MagnifyingGlass"
               width={24}
