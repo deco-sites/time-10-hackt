@@ -30,16 +30,16 @@ function Gallery({ page }: { page: ProductListingPage }) {
       </div>
 
       <div class="flex flex-row items-center justify-center gap-2 my-4">
-        <a rel="prev" href={page.pageInfo.previousPage ?? "#"}>
-          <Button disabled={!page.pageInfo.previousPage} variant="icon">
+        <a rel="prev" href={page.pageInfo.previousPage ?? "/"}>
+          <Button disabled={!page.pageInfo.previousPage} variant="icon" name="Previous">
             <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
           </Button>
         </a>
         <Text variant="caption">
           {page.pageInfo.currentPage + 1}
         </Text>
-        <a rel="next" href={page.pageInfo.nextPage ?? "#"}>
-          <Button disabled={!page.pageInfo.nextPage} variant="icon">
+        <a rel="next" href={page.pageInfo.nextPage ?? "/"}>
+          <Button disabled={!page.pageInfo.nextPage} variant="icon" name="Next">
             <Icon id="ChevronRight" width={20} height={20} strokeWidth={2} />
           </Button>
         </a>

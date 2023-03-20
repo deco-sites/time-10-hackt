@@ -60,8 +60,8 @@ export default function BannnerPromotions({
             <Source
                 media="(min-width: 768px)"
                 src={srcDesktop ? srcDesktop : srcMobile}
-                // width={250}
-                // height={250}
+                width={615}
+                height={165}
             />
             <img
                 class="w-full h-auto"
@@ -70,6 +70,8 @@ export default function BannnerPromotions({
                 alt={alt}
                 decoding="async"
                 loading="lazy"
+                width={615}
+                height={165}
             />
             </Picture>
         </a>

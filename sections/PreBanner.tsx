@@ -59,6 +59,8 @@ export default function BannnerGrid({
                     class="w-full"
                     media="(min-width: 768px) (max-width: 100%)"
                     src={srcDesktop ? srcDesktop : ''}
+                    width={1920}
+                    height={100}
                 />
                 <img
                   class="w-full h-auto"
@@ -67,6 +69,8 @@ export default function BannnerGrid({
                   decoding="async"
                   loading="lazy"
                   alt="PreBanner"
+                  width={1920}
+                  height={100}
                 />
               </Picture>
             </a>
