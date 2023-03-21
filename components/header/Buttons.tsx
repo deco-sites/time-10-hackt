@@ -50,6 +50,7 @@ function CartButton() {
     <Button
       variant="icon"
       class="relative border-[0px]"
+      name="button"
       aria-label="open cart"
       disabled={loading.value}
       onClick={() => {

@@ -55,7 +55,7 @@ function Navbar({ items }: {
           <p class="text-[#fff]">
             Ofertas para <span class="text-[#00CF80]">{location}</span>
           </p>
-          <button class="bg-[#00CF80] text-[#040491] ml-1 rounded-full px-2 focus:outline-none focus:ring-0 focus:ring-transparent">
+          <button class="bg-[#00CF80] text-[#040491] ml-1 rounded-full px-2 focus:outline-none focus:ring-0 focus:ring-transparent" name="button header">
             alterar
           </button>
         </div>

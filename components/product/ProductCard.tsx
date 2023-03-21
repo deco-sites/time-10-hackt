@@ -99,7 +99,7 @@ function ProductCard({ product, preload }: Props) {
           </Text>
           <div class="flex items-center gap-2 flex-col">
             <Text
-              class="font-[15.2px] flex font-sans text-[#808080] mt-[5px]"
+              class="font-[15.2px] flex font-sans text-[#000] mt-[5px]"
             >
                 de: <p class="line-through">{formatPrice(listPrice, offers!.priceCurrency!)}</p>
             </Text>

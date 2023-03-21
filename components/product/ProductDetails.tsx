@@ -72,6 +72,8 @@ function Details({ page }: { page: ProductDetailsPage }) {
               sizes="(max-width: 640px) 100vw, 30vw"
               src={img.url!}
               alt={img.alternateName}
+              width={600}
+              height={600}
               // Preload LCP image for better web vitals
               preload={index === 0}
               loading={index === 0 ? "eager" : "lazy"}

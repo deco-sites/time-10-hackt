@@ -63,10 +63,10 @@ function ProductOnOffer({ product, preload }: Props) {
             src={front.url!}
             alt={front.alternateName}
             class="rounded w-full group-hover:hidden"
-            preload={preload}
+            // preload={preload}
             width={220}
             height={220}
-            loading={preload ? "eager" : "lazy"}
+            // loading={preload ? "eager" : "lazy"}
             sizes="(max-width: 640px) 50vw, 20vw"
           />
           <Image
@@ -91,20 +91,20 @@ function ProductOnOffer({ product, preload }: Props) {
           )}
         </div>
 
-        <div class="flex items-center bg-[#00CF80] w-full h-[45px] text-center justify-center">
+        <div class="flex items-center bg-[#008280] w-full h-[45px] text-center justify-center">
             <Icon
-                class="text-white fill-white color-[#ffffff] mr-[5px] font-bold w-[25px] h-[25px]"
+                class="text-white fill-white color-white mr-[5px] font-bold w-[25px] h-[25px]"
                 color="#ffffff"
                 size={20}
                 id="Timer"
                 strokeWidth={3}
             />
-            <p class="text-[#ffffff] uppercase font-bold">Aproveite Já!</p>
+            <p class="text-white uppercase font-bold">Aproveite Já!</p>
         </div>
 
         <div class="flex flex-col gap-1 py-2 bg-[#040491] h-[200px] text-center py-[10px]">
           <Text
-            class="text-[#ffffff] font-bold w-[95%] my-0 mx-auto text-[15.2px]"
+            class="text-white font-bold w-[95%] my-0 mx-auto text-[15.2px]"
             variant="caption"
           >
             {name}

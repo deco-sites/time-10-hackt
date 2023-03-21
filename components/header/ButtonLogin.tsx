@@ -9,6 +9,7 @@ function ButtonLogin() {
         as="a"
         variant="icon"
         href="/login"
+        name="button"
         aria-label="Log in"
         class="border-[0px]"
       >

@@ -12,6 +12,22 @@ export interface Banner {
    * @description When you click you go to
    */
   href: string;
+  /**
+   * @description Width Desktop Banner
+   */
+  widhtDesktop: string;
+  /**
+   * @description Height Desktop Banner
+   */
+  heightDesktop: string;
+  /**
+   * @description Width Mobile Banner
+   */
+  widhtMobile: string;
+  /**
+   * @description Height Mobile Banner
+   */
+  heightMobile: string;
 }
 
 export interface Props {
@@ -32,6 +48,10 @@ export interface Props {
 export default function BannnerPromotions({
   itemsPerLine,
   borderRadius,
+  widhtDesktop,
+  heightDesktop,
+  widhtMobile,
+  heightMobile,
   banners = [],
 }: Props) {
   return (
@@ -60,8 +80,8 @@ export default function BannnerPromotions({
             <Source
                 media="(min-width: 768px)"
                 src={srcDesktop ? srcDesktop : srcMobile}
-                width={615}
-                height={165}
+                width={widhtDesktop}
+                height={heightDesktop}
             />
             <img
                 class="w-full h-auto"
@@ -70,8 +90,8 @@ export default function BannnerPromotions({
                 alt={alt}
                 decoding="async"
                 loading="lazy"
-                width={615}
-                height={165}
+                width={widhtMobile}
+                height={heightMobile}
             />
             </Picture>
         </a>
