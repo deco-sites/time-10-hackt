@@ -43,6 +43,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
   return (
     <Component
       {...props}
+      name="button"
       className={`inline-flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed transition-colors duration-150 ease-in border ${styles.buy} ${_class}`}
       disabled={disabled || loading}
       type={type}
