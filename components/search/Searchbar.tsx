@@ -147,7 +147,7 @@ function Searchbar({
           <button
             type="button"
             aria-label="Clean search"
-            class="focus:outline-none"
+            class="focus:outline-none bg-[#008280]"
             tabIndex={-1}
             name="Search button"
             onClick={(e) => {

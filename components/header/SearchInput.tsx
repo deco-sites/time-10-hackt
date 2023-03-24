@@ -35,7 +35,7 @@ function SearchInput() {
         placeholder="Procure por código, nome, marca..."
         class="w-[400px] h-[48px] pl-10 rounded-l-full text-base focus:outline-none	focus:ring-0 focus:ring-transparent "
       />
-      <button class="rounded-r-full bg-[#00CF80] text-[#fff] px-5 text-base	h-[48px] focus:outline-none	focus:ring-0 focus:ring-transparent">
+      <button class="rounded-r-full bg-[#008280] text-[#fff] px-5 text-base	h-[48px] focus:outline-none	focus:ring-0 focus:ring-transparent">
         Buscar
       </button>
     </div>

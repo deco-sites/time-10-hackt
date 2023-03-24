@@ -58,6 +58,7 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
         onClick={increment}
         disabled={disabled}
         loading={loading}
+        aria-label="Button"
       >
         +
       </Button>

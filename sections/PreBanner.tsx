@@ -53,6 +53,7 @@ export default function BannnerGrid({
             <a
               href={href}
               class={`overflow-hidden`}
+              aria-label="Button"
             >
               <Picture>
                 <Source
