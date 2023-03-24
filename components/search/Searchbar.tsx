@@ -149,6 +149,7 @@ function Searchbar({
             aria-label="Clean search"
             class="focus:outline-none"
             tabIndex={-1}
+            name="Search button"
             onClick={(e) => {
               e.stopPropagation();
               if (searchInputRef.current === null) return;

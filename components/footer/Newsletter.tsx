@@ -4,7 +4,7 @@ function Newsletter() {
   return (
     <div class="flex flex-col sm:flex-row items-center sm:gap-20">
       <div class="flex">
-        <strong class="text-white">Cadastre-se</strong>
+        <strong class="text-white mr-[5px]">Cadastre-se</strong>
         <span class="text-white">e receba novidades exclusivas em seu e-mail</span>
       </div>
       <form class="flex flex-row items-center gap-2 font-body text-body w-full sm:w-[408px]">
