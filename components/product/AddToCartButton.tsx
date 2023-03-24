@@ -14,7 +14,7 @@ function AddToCartButton({ skuId, sellerId }: Props) {
   });
 
   return (
-    <Button {...props} class="w-[220px] h-[55px] text-[18.2px] uppercase rounded-[30px] bg-[#00CF80] text-white font-bold">
+    <Button {...props} class="w-[220px] h-[55px] text-[18.2px] uppercase rounded-[30px] bg-[#008280] text-white font-bold" aria-label="Next Button">
       <Icon id="CartShopping" width={50} height={50} strokeWidth={2} fill="#fff" />
       Comprar
     </Button>

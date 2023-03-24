@@ -138,6 +138,7 @@ function Controls() {
           variant="icon"
           data-slide="prev"
           aria-label="Previous item"
+          name="button"
         >
           <Icon
             class="text-default-inverse"
@@ -152,6 +153,7 @@ function Controls() {
           class="h-12 w-12"
           variant="icon"
           data-slide="next"
+          name="button"
           aria-label="Next item"
         >
           <Icon

@@ -32,6 +32,7 @@ function Coupon() {
         <Button
           class="underline text-caption font-caption"
           onClick={toggleInput}
+          aria-label="Next Button"
           variant="icon"
         >
           {coupon || "Adicionar"}

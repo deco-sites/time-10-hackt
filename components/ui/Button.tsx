@@ -48,6 +48,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
       disabled={disabled || loading}
       type={type}
       ref={ref}
+      aria-label="Button"
     >
       {loading === true ? <Spinner size={24} /> : children}
     </Component>

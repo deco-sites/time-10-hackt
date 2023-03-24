@@ -68,6 +68,7 @@ export default function BannnerPromotions({
         {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
         <a
             href={href}
+            aria-label="Button"
             class={`overflow-hidden ${
             borderRadius?.mobile && `rounded-[${borderRadius.mobile}px]`
             } ${
