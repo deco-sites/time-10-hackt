@@ -270,7 +270,6 @@ const manifest: DecoManifest = {
               },
             },
             "required": [],
-            "description": "Item's border radius in px",
           },
           "banners": {
             "type": "array",

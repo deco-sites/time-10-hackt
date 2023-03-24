@@ -22,6 +22,9 @@ export interface Props {
   /**
    * @description Item's border radius in px
    */
+  /**
+   * New
+   */
   borderRadius: {
     mobile?: number;
     desktop?: number;
