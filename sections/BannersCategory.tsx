@@ -12,22 +12,6 @@ export interface Banner {
    * @description When you click you go to
    */
   href: string;
-  /**
-   * @description Width Desktop Banner
-   */
-  widhtDesktop: string;
-  /**
-   * @description Height Desktop Banner
-   */
-  heightDesktop: string;
-  /**
-   * @description Width Mobile Banner
-   */
-  widhtMobile: string;
-  /**
-   * @description Height Mobile Banner
-   */
-  heightMobile: string;
 }
 
 export interface Props {
@@ -78,17 +62,15 @@ export default function BannnerPromotions({
                   media="(min-width: 768px)"
                   src={srcDesktop ? srcDesktop : srcMobile}
                   width={1400}
-                  height={500}
+                  height={300}
               />
               <img
                   class="w-full h-auto"
                   sizes="(max-width: 640px) 100vw, 30vw"
                   src={srcDesktop}
                   alt={alt}
-                  decoding="async"
-                  loading="lazy"
                   width={1400}
-                  height={500}
+                  height={300}
               />
             </Picture>
         </a>
